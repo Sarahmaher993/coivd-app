@@ -9,7 +9,7 @@ data class TrackingResponse(
 )
 
 data class DateSummary(
-    @SerializedName("countrie") val countries: Map<String?, CountryTrackingDetails?>,
+    val countries: Map<String?, CountryTrackingDetails?>,
     val info: DateInfo?
 )
 
@@ -30,10 +30,10 @@ data class CountryTrackingDetails(
     val today_new_recovered: Long?,
     val today_open_cases: Long?,
     val today_recovered: Long?,
-    val today_vs_yesterday_confirmed: Long?,
-    val today_vs_yesterday_deaths: Long?,
-    val today_vs_yesterday_open_cases: Long?,
-    val today_vs_yesterday_recovered: Long?,
+    val today_vs_yesterday_confirmed: Double?,
+    val today_vs_yesterday_deaths: Double?,
+    val today_vs_yesterday_open_cases: Double?,
+    val today_vs_yesterday_recovered: Double?,
     val yesterday_confirmed: Long?,
     val yesterday_deaths: Long?,
     val yesterday_open_cases: Long?,
@@ -63,10 +63,10 @@ data class Region(
     val today_new_recovered: Long?,
     val today_open_cases: Long?,
     val today_recovered: Long?,
-    val today_vs_yesterday_confirmed: Long?,
-    val today_vs_yesterday_deaths: Long?,
-    val today_vs_yesterday_open_cases: Long?,
-    val today_vs_yesterday_recovered: Long?,
+    val today_vs_yesterday_confirmed: Double?,
+    val today_vs_yesterday_deaths: Double?,
+    val today_vs_yesterday_open_cases: Double?,
+    val today_vs_yesterday_recovered: Double?,
     val yesterday_confirmed: Long?,
     val yesterday_deaths: Long?,
     val yesterday_open_cases: Long?,
@@ -85,9 +85,9 @@ data class SubRegion(
     val today_new_deaths: Long?,
     val today_new_recovered: Long?,
     val today_recovered: Long?,
-    val today_vs_yesterday_confirmed: Long?,
-    val today_vs_yesterday_deaths: Long?,
-    val today_vs_yesterday_recovered: Long?,
+    val today_vs_yesterday_confirmed: Double?,
+    val today_vs_yesterday_deaths: Double?,
+    val today_vs_yesterday_recovered: Double?,
     val yesterday_confirmed: Long?,
     val yesterday_deaths: Long?,
     val yesterday_recovered: Long?
