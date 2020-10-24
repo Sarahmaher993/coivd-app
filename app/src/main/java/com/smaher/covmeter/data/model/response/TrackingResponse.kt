@@ -1,6 +1,8 @@
 package com.smaher.covmeter.data.model.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class TrackingResponse(
     val updated_at: String?,
@@ -13,6 +15,7 @@ data class DateSummary(
     val info: DateInfo?
 )
 
+@Parcelize
 data class CountryTrackingDetails(
     val date: String?,
     val id: String?,
@@ -38,14 +41,16 @@ data class CountryTrackingDetails(
     val yesterday_deaths: Long?,
     val yesterday_open_cases: Long?,
     val yesterday_recovered: Long?
-)
+):Parcelable
 
+@Parcelize
 data class Link(
     val href: String?,
     val rel: String?,
     val type: String?
-)
+):Parcelable
 
+@Parcelize
 data class Region(
     val date: String,
     val id: String,
@@ -71,7 +76,8 @@ data class Region(
     val yesterday_deaths: Long?,
     val yesterday_open_cases: Long?,
     val yesterday_recovered: Long?
-)
+):Parcelable
+@Parcelize
 data class SubRegion(
     val date: String,
     val id: String,
@@ -91,7 +97,7 @@ data class SubRegion(
     val yesterday_confirmed: Long?,
     val yesterday_deaths: Long?,
     val yesterday_recovered: Long?
-)
+):Parcelable
 
 data class DateInfo(
     val date: String?,

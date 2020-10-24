@@ -22,7 +22,7 @@ internal interface NewsRemoteService {
     suspend fun getCountryHeadlines(
         @Query("country") countryCode: String?,
         @Query("apiKey") apiKey: String?,
-        @Query("country") category: String?
+        @Query("category") category: String?
     ): ArticleResponse
 
 }

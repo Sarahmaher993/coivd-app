@@ -1,6 +1,5 @@
 package com.smaher.covmeter.ui.news
 
-import android.graphics.Movie
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import com.smaher.covmeter.R
 import com.smaher.covmeter.data.model.response.ArticleData
 
 
-class NewsRecyclerAdapter() :
+class NewsRecyclerAdapter(val onRecyclerViewItemClickListener:OnRecyclerViewItemClickListener) :
     RecyclerView.Adapter<NewsRecyclerAdapter.MyViewHolder>() {
 
     private val articles: ArrayList<ArticleData> = ArrayList()
@@ -22,6 +21,7 @@ class NewsRecyclerAdapter() :
         var title: TextView = view.findViewById(R.id.title)
         var author: TextView = view.findViewById(R.id.author)
         var imageView: ImageView = view.findViewById(R.id.imageView)
+        var item:View = view
     }
 
     override fun onCreateViewHolder(
@@ -40,6 +40,9 @@ class NewsRecyclerAdapter() :
         val article = articles[position]
         holder.title.text = article.title
         holder.author.text = article.author
+        holder.item.setOnClickListener {
+            onRecyclerViewItemClickListener.onRecyclerViewItemClicked(article)
+        }
         Glide
             .with(holder.holderContext)
             .load(article.urlToImage)
@@ -56,5 +59,9 @@ class NewsRecyclerAdapter() :
         this.articles.clear()
         this.articles.addAll(articles)
         notifyDataSetChanged()
+    }
+
+    public interface OnRecyclerViewItemClickListener {
+        fun onRecyclerViewItemClicked(item: ArticleData)
     }
 }

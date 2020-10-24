@@ -4,8 +4,8 @@ import com.smaher.covmeter.data.model.response.TrackingResponse
 import com.smaher.covmeter.data.repository.CovidUpdatesProvider
 
 class GetTrackingDataUseCase constructor(private val covidUpdatesProvider: CovidUpdatesProvider) {
-    suspend fun execute(dateTo:String?): TrackingResponse? {
-        return covidUpdatesProvider.getServices().getTrackingDataByDateRange(dateTo,dateTo)
+    suspend fun execute(dateFrom:String?,dateTo:String?): TrackingResponse? {
+        return covidUpdatesProvider.getServices().getTrackingDataByDateRange(dateFrom,dateTo)
     }
 
 }

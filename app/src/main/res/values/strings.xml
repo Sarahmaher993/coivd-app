@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Covid19Meter</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="lbl_news">News</string>
+    <string name="new_recovered_cases">New recovered cases:</string>
+    <string name="new_deaths">New deaths:</string>
+    <string name="new_confirmed_cases">New confirmed cases:</string>
+    <string name="new_confirmed_cases_map"> %s New Cases</string>
+    <string name="yestrday_deaths">Yesterday\'s deaths:</string>
+    <string name="yesterday_confirmed_cases">Yesterday\'s confirmed cases:</string>
+    <string name="yesterday_recovered_cases">Yesterday\'s recovered cases:</string>
+    <string name="btn_news">GET HEADLINES</string>
+    <string name="lbl_no_result">No Results Found :(</string>
+
+
+</resources>
